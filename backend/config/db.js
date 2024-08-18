@@ -1,17 +1,23 @@
-/*
-Import Mongoose: The first step is to import Mongoose, a library that simplifies working with MongoDB in Node.js.
+process.env.MONGO_URI = 'mongodb+srv://aaronsharif:PFJ%23R3%40BJyB3spx@cluster0.mxeg5.mongodb.net/yourDatabaseName?retryWrites=true&w=majority&appName=Cluster0';
 
-Define the Connection Function:  define an asynchronous function connectDB that will handle the connection to the MongoDB database.
+const mongoose = require('mongoose');
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') });  // Explicitly specify the path to the .env file
 
-Attempt to Connect: Inside the try block, the mongoose.connect function is called with the MongoDB URI from an environment variable (process.env.MONGO_URI). We also pass some options to avoid deprecated MongoDB features.
+const connectDB = async () => {
+    try {
+        const mongoUri = process.env.MONGO_URI;
+        console.log('MongoDB URI:', mongoUri);  // Debugging: Ensure the URI is correctly loaded
 
-Handle Success: If the connection is successful, a message is printed to the console.
+        await mongoose.connect(mongoUri, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        });
+        console.log('MongoDB connected successfully');
+    } catch (error) {
+        console.error('Error connecting to MongoDB:', error.message);
+        process.exit(1); // Exit the process with failure
+    }
+};
 
-Handle Errors: If there is an error during the connection attempt, the error message is logged, and the process exits with an error code.
-
-Export the Function: The connectDB function is then exported so it can be used elsewhere in the project, typically to establish the database connection when the server starts.
-
-This commented code provides a clear understanding of each step involved in setting up the database connection.
-
-
-*/
+module.exports = connectDB;

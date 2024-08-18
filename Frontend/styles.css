@@ -1,0 +1,77 @@
+/* General Reset */
+body, h1, form, input, button, div {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-color: #000; /* Black background */
+    color: #fff;            /* White text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container Styling */
+.container {
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #fff; /* White border */
+    border-radius: 10px;
+    width: 300px;
+}
+
+/* Heading Styling */
+h1 {
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background-color: #000; /* Black input background */
+    color: #fff;            /* White input text */
+    margin-bottom: 20px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff; /* White button background */
+    color: #000;            /* Black button text */
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ccc; /* Light gray hover effect */
+}
+
+/* Result Display */
+.result {
+    border-top: 1px solid #fff;
+    padding-top: 20px;
+}
+
+.result p {
+    color: #fff;
+    font-size: 14px;
+    word-wrap: break-word;
+}
