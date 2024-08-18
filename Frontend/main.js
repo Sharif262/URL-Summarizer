@@ -1,3 +1,6 @@
+
+
+
 document.getElementById('scrapeForm').addEventListener('submit', async function(event) {
     event.preventDefault();
 
@@ -21,8 +24,8 @@ document.getElementById('scrapeForm').addEventListener('submit', async function(
         }
 
         const data = await response.json();
-        resultDiv.innerHTML = `<p><strong>Title:</strong> ${data.data.title}</p>
-                               <p><strong>Action Performed:</strong> ${data.data.actionPerformed || 'None'}</p>
+        resultDiv.innerHTML = `<p><strong>Title:</strong> ${data.data.title}</p>-
+                               <p><strong>Action Performed:</strong> ${data.data.actionPerformed || 'None'}</p>-
                                <p><strong>Content:</strong> ${data.data.content}</p>`;
     } catch (error) {
         resultDiv.innerHTML = `<p>Error: ${error.message}</p>`;

@@ -19,10 +19,10 @@ body {
 /* Container Styling */
 .container {
     text-align: center;
-    padding: 20px;
-    border: 2px solid #fff; /* White border */
+    padding: 30px;
     border-radius: 10px;
     width: 300px;
+    max-height: 100%;
 }
 
 /* Heading Styling */
@@ -74,4 +74,5 @@ button:hover {
     color: #fff;
     font-size: 14px;
     word-wrap: break-word;
+
 }
